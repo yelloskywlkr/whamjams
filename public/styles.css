@@ -1,0 +1,96 @@
+h1 {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  
+}
+
+h2 {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: .5em;
+}
+ 
+body {
+  color: #ffffff;
+  background-color: #000000;
+  font-family: 'Digital', sans-serif;
+  font-size: 95px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+div.timecircuit {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+}
+
+.videoplayer {
+  position: relative;
+  top: 0;
+  left: 0;  
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.video {
+  position: absolute;
+  top: 685px;
+  left: 633px;
+}
+
+.message {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  font-size: .5em;
+}
+
+#yrbutton {
+  width:75px;
+  height: 25px;
+}
+ 
+#yrbox {
+  width: 130px; 
+  height: 55px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+  font-family: 'Digital';
+  font-size: 65px;
+}
+
+  /*DOS styling*/
+/* div.resultdesign {
+  font-size: 55px;
+  color:chartreuse;
+} */
+
+/* div.checkboxes {
+  color:chartreuse;
+} */
+
+/* div.resultselected {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/*Simonsays styling*/
+  

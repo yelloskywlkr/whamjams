@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link href="styles.css" rel="stylesheet">
+    </head>
+
+<body>
+    <div class="resultdesign">
+    <h1 id="resultsHeader"> Results </h1>
+    <div id="music"></div>
+    <p>...................................................................................................................................................................</p>
+</div>
+    <div class="checkboxes">
+    <form action="/action_page.php">
+        
+        <input type="checkbox" id="result1" name="result1" value="n/a">
+        <span class="checkmark"></span>
+        <label for="result1"> ......................</label><br>
+    </label>
+
+        
+        <input type="checkbox" id="result2" name="result2" value="n/a">
+        <span class="checkmark"></span>
+        <label for="result2"> ......................</label><br>
+    </label>
+
+        
+        <input type="checkbox" id="result3" name="result3" value="n/a">
+        <span class="checkmark"></span>
+        <label for="result3"> ......................</label><br><br>
+    </label>
+    
+    <div id ="showResults"></div>
+
+    <div class="resultselected">
+        <input type="submit" value="Submit">
+    </div>
+      </form>
+    
+      </div>
+</body>
+<script>
+    getParameterByName = function (name, url) {   //pull year out of URL to pass to getData command
+
+if (!url) {
+    url = window.location.href;
+}
+
+name = name.replace(/[\[\]]/g, "\\$&");
+
+let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+
+if (!results) {
+    return null;
+}
+
+if (!results[2]) {
+    return '';
+}
+
+return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+    
+let year = getParameterByName("year");   
+
+
+    const results = function () {
+    const getData = "http://localhost:3000/getData?year=" + year; //getting year data
+
+fetch(getData)                               //executes command to go to url
+    .then(function (response) {              //populates
+        console.log(response)
+        if (response.status === 200) {
+            return response.json();          //executes json function of nested information        
+        }
+
+    })
+    .then(function (json) {                
+        let html = '<table>';
+
+        for (let i = 0;i<json.length;i++) {
+            html += `<tr>
+            <td>${json[i].id})"> </td>
+            <td>${json[i].artist}</td>
+            <td>${json[i].song_name}</td>
+            <td>${json[i].year}</td>
+            <td>${json[i].song_length}</td>  
+            <td><a href=${json[i].song_url} target=“_blank”>${json[i].song_url}</a></td></tr>`;    //href creates hyper link while then displaying on the page
+        }
+        html += '</table>';
+        document.querySelector('#music').innerHTML = html; //inject table into html document 
+      
+    })
+    .then(function (json) {
+      console.log(json)
+    });
+};
+results();
+</script>
+</html>
