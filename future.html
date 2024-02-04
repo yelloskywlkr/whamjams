@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whamjams</title>
+    <link href="/styles.css" rel="stylesheet">
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+    <!-- console error giving favicon.ico  -->
+    <link rel="font type" href="https://www.fontspace.com/digital-font-f17797">
+</head>
+<body>
+    
+    <h1> WhamJams </h1>
+    <h2> Type in year between 1989-1996 to time travel to your music destination</h2>
+   
+       <!-- <div class="timecircuit">   -->
+       <!-- <img src="timecopy.png" >  -->
+       <!-- </div>  -->
+
+     <div class="text-box"></div>
+     <form>
+      <input type="text" id="yrbox" font-size="10px">
+     
+     
+     <div><label for="yrbutton">YEAR</label></div>
+
+      <div class="submit"></div>
+      
+        <input type="button"  id="yrbutton" value="Wham!" class="submit" name="yrbutton" font-size="10px" onclick="navtoresults()">
+        
+      </form>
+
+      <p>
+        
+      </p>
+        
+      
+</body>
+<script>
+function navtoresults() {
+  var year= document.getElementById('yrbox').value;
+  localStorage.setItem('year', year);
+  console.log(year)
+  // queryVidsByYear(year);
+  location.replace("/dospage?year=" + year);
+
+}
+</script>
+</html>
